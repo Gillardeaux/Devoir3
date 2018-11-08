@@ -11,9 +11,13 @@
         $(
             function()
             {
-                $('input[name=login]').click(function()
+
+                $('input[name=connexion]').click(function()
                 {
+                    if($("#log").val() == "Girard")
+                    {
                     afficherLesRegions();
+                    }
                 });
             }
         );
@@ -23,10 +27,11 @@
 <body>
     <h1>Devoir Region</h1>
 
-    <input type='text' value='Entrez votre nom' name='login'> <br><br>
-    <input type='button' value='Connexion' name='connexion' onclick='afficherLesRegions()'>
+    <input type='text' value='Entrez votre nom' name='login' id='log' > <br><br>
+    <input type='button' value='Connexion' name='connexion''> <br><br>
 
-    <div id="region"></div>
+    <div id="region"></div> <br><br>
+    <div id="ville"></div>
 
 </body>
 </html>
