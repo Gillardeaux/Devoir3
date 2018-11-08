@@ -7,6 +7,7 @@ function afficherLesRegions()
             {
                 type:"get",
                 url:"index.php/Ctrl_Accueil/getAfficherLesRegions",
+                data:"nomUser = " + $("#log").val(),
                 success:function(data)
                 {
                     $('#region').empty();
@@ -29,7 +30,7 @@ function afficherLesVilles(id)
             {
                 type:"get",
                 url:"index.php/Ctrl_Accueil/getAfficherLesVilles",
-                data:"id="+id ,
+                data:"id="+id,
                 success:function(data)
                 {
                     $('#ville').empty();
@@ -41,4 +42,26 @@ function afficherLesVilles(id)
                 }
             }
         );
+}
+
+function ajouterScore(id)
+{
+    alert("Ça fonctionne encore");
+
+        $.ajax
+        (
+            {
+                type:"get",
+                url:"index.php/Ctrl_Accueil/setScoreVille",
+                data:"id="+id,
+                success:function()
+                {
+                    alert("Score ajouté !")
+                },
+                error:function()
+                {
+                    alert("Impossible de changer le score des villes");
+                }
+            }
+        )
 }

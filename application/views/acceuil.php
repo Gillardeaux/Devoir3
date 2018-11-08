@@ -14,10 +14,7 @@
 
                 $('input[name=connexion]').click(function()
                 {
-                    if($("#log").val() == "Girard")
-                    {
-                    afficherLesRegions();
-                    }
+                    afficherLesRegions($("#log").val());
                 });
             }
         );
